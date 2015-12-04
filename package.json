@@ -1,7 +1,7 @@
 {
-  "name": "webpack-seed",
+  "name": "react-app-seed",
   "version": "1.0.0",
-  "description": "Webpack seed",
+  "description": "React App Seed",
   "scripts": {
     "watch": "webpack --watch"
   },
