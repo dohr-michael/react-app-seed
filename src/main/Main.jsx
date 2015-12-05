@@ -6,11 +6,15 @@ export default class Main extends Component {
     render() {
         return (
             <div>
-                Hello, World !!! Thomas <br />
-                <br />
-                <div>
+                <header>
+                    Header
+                </header>
+                <content>
                     { this.props.children }
-                </div>
+                </content>
+                <footer>
+                    Footer
+                </footer>
             </div>
         )
     }

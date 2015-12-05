@@ -16,8 +16,9 @@ export default class Hello extends Component {
     }
 
     render() {
+
         return (
-            <div>Hello, from Hello</div>
+            <button>click me</button>
         );
     }
 }

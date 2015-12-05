@@ -1,9 +1,12 @@
 const webpack = require( 'webpack' );
 const util = require( 'util' );
+const path = require( 'path' );
+const ExtractTextPlugin = require( 'extract-text-webpack-plugin' );
 const pkg = require( '../package.json' );
 
 
 const DEV = process.env.NODE_ENV === 'dev';
+const cssBundle = path.join( 'css', util.format( '[name].%s.css', pkg.version ) );
 
 const plugins = [
     new webpack.optimize.OccurenceOrderPlugin(),
@@ -19,6 +22,9 @@ if( DEV ) {
     );
 } else {
     plugins.push(
+        new ExtractTextPlugin( cssBundle, {
+            allChunks: true
+        } ),
         new webpack.optimize.UglifyJsPlugin(),
         new webpack.NoErrorsPlugin()
     );

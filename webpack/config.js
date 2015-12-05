@@ -3,10 +3,11 @@ const util = require( 'util' );
 const pkg = require( '../package.json' );
 const loaders = require( './loaders' );
 const plugins = require( './plugins' );
+const autoprefixer = require ( 'autoprefixer' );
 
 
 const DEV = process.env.NODE_ENV === 'dev';
-const MODE = process.env.MODE || '';
+const PROFILE = process.env.PROFILE || '';
 
 const jsBundle = path.join( 'js', util.format( '[name].%s.js', pkg.version ) );
 const entries = {
@@ -37,7 +38,7 @@ module.exports = {
     resolve:   {
         root:       context,
         extensions: ['', '.js', '.json', '.jsx'],
-        alias: (pkg.config.alias[MODE] || {})
+        alias: (pkg.config.alias[PROFILE] || {})
     },
     module:    {
         loaders: loaders
@@ -46,6 +47,9 @@ module.exports = {
     devtool:   DEV ? 'inline-source-map' : false,
     cache:     DEV,
     debug:     DEV,
+    postcss: [
+        autoprefixer
+    ],
     devServer: {
         contentBase: path.resolve( pkg.config.buildDir ),
         reload:      util.format( 'http://%s:%d', pkg.config.devHost, pkg.config.devPort ),
