@@ -46,10 +46,14 @@
   "dependencies": {
     "babel-polyfill": "^6.2.0",
     "babel-runtime": "^6.2.0",
+    "flux": "^2.1.1",
     "history": "^1.13.1",
+    "keymirror": "^0.1.1",
+    "lodash": "^3.10.1",
     "normalize.css": "^3.0.3",
     "react": "^0.14.3",
     "react-dom": "^0.14.3",
-    "react-router": "^1.0.0"
+    "react-router": "^1.0.0",
+    "whatwg-fetch": "^0.10.1"
   }
 }

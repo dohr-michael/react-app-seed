@@ -1,5 +1,4 @@
 // Global imports.
-import 'babel-polyfill';
 import 'normalize.css/normalize.css';
 // Modules
 import React                             from 'react';
@@ -10,8 +9,8 @@ import { render }                        from 'react-dom';
 // App imports.
 import 'index.html';
 import 'scss/app.scss';
-import Main                              from 'main/Main';
-import Hello                             from 'hello/Hello';
+import Main                              from 'components/main/Main';
+import Hello                             from 'components/hello/Hello';
 
 //Needed for React Developer Tools
 window.React = React;

@@ -12,8 +12,8 @@ const PROFILE = process.env.PROFILE || '';
 const jsBundle = path.join( 'js', util.format( '[name].%s.js', pkg.version ) );
 const entries = {
     app:      ['./app.js'],
-    vendors:  ['react', 'react-dom', 'react-router', 'history'],
-    polyfills: ['babel-polyfill']
+    vendors:  ['react', 'react-dom', 'react-router', 'flux', 'history'],
+    polyfills: ['babel-polyfill', 'whatwg-fetch']
 };
 
 if( DEV ) {
